@@ -3,16 +3,17 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(void) {
+void ping(void) {
     const char *host = getenv("PING_HOST");   /* attacker-controlled source */
     char cmd[256];
     sprintf(cmd, "ping -c 1 %s", host ? host : "localhost");
-    system(cmd);                               /* command injection sink */
+    system(cmd);                              /* command injection sink */
+}
 
+void read_log(void) {
     const char *name = getenv("LOG_NAME");
-    char cmd2[256];
-    snprintf(cmd2, sizeof(cmd2), "cat /var/log/%s", name ? name : "syslog");
-    FILE *p = popen(cmd2, "r");
+    char cmd[256];
+    snprintf(cmd, sizeof(cmd), "cat /var/log/%s", name ? name : "syslog");
+    FILE *p = popen(cmd, "r");
     if (p) pclose(p);
-    return 0;
 }

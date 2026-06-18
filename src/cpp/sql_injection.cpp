@@ -4,7 +4,7 @@
 
 extern int db_exec(const char* sql);   // pretend DB API
 
-int main() {
+int findUser() {
     const char* userId = std::getenv("USER_ID");   // untrusted source
     std::string sql = "SELECT * FROM users WHERE id = '" +
                       std::string(userId ? userId : "") + "'";

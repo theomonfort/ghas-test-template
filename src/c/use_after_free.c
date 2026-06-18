@@ -2,12 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(void) {
+void process(void) {
     char *data = (char *)malloc(64);
-    if (!data) return 1;
+    if (!data) return;
     strcpy(data, "payload");
     free(data);
     strcpy(data, "again");   /* use after free */
     free(data);              /* double free */
-    return 0;
 }

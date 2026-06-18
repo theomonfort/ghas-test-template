@@ -2,8 +2,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-int main() {
+void logInput() {
     const char* userInput = std::getenv("USER_MSG");
     if (userInput) std::printf(userInput);   // attacker controls the format string
-    return 0;
 }

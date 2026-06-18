@@ -3,11 +3,10 @@
 #include <fstream>
 #include <string>
 
-int main() {
+std::string readUserFile() {
     const char* filename = std::getenv("USER_FILE");   // e.g. ../../etc/passwd
-    if (!filename) return 1;
+    if (!filename) return "";
     std::ifstream in("/srv/data/" + std::string(filename));   // path injection sink
-    std::string content((std::istreambuf_iterator<char>(in)),
-                        std::istreambuf_iterator<char>());
-    return content.empty() ? 1 : 0;
+    return std::string((std::istreambuf_iterator<char>(in)),
+                       std::istreambuf_iterator<char>());
 }

@@ -3,11 +3,10 @@
 #include <stdlib.h>
 #include <syslog.h>
 
-int main(void) {
+void log_user(void) {
     const char *user_input = getenv("USER_MSG");
     if (user_input) {
         printf(user_input);              /* attacker controls the format string */
         syslog(LOG_INFO, user_input);
     }
-    return 0;
 }
