@@ -38,6 +38,7 @@ jobs:
         with:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.build-mode }}
+          queries: security-extended
 
       - name: Build C/C++ samples
         if: matrix.build-mode == 'manual'
