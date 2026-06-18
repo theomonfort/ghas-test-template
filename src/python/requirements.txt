@@ -10,6 +10,6 @@ cryptography==2.2
 paramiko==2.0.0
 pycrypto==2.6.1
 pillow==4.3.0
-lxml==3.6.0
+lxml==6.1.1
 sqlalchemy==1.0.0
 python-ldap==3.1.0
