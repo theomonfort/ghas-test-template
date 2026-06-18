@@ -1,8 +1,10 @@
-// CWE-78: OS command injection by concatenating untrusted input into system().
+// CWE-78: OS command injection — environment input concatenated into system().
 #include <cstdlib>
 #include <string>
 
-void ping(const std::string& host) {
-    std::string cmd = "ping -c 1 " + host;   // host is attacker-controlled
-    std::system(cmd.c_str());
+int main() {
+    const char* host = std::getenv("PING_HOST");   // attacker-controlled source
+    std::string cmd = "ping -c 1 " + std::string(host ? host : "localhost");
+    std::system(cmd.c_str());                       // command injection sink
+    return 0;
 }

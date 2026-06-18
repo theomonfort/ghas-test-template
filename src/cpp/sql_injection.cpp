@@ -1,10 +1,12 @@
-// CWE-89: SQL injection — user input concatenated into a query string.
+// CWE-89: SQL injection — environment input concatenated into a query string.
+#include <cstdlib>
 #include <string>
 
-// Pretend DB API.
-extern int db_exec(const char* sql);
+extern int db_exec(const char* sql);   // pretend DB API
 
-int findUser(const std::string& userId) {
-    std::string sql = "SELECT * FROM users WHERE id = '" + userId + "'";
-    return db_exec(sql.c_str());
+int main() {
+    const char* userId = std::getenv("USER_ID");   // untrusted source
+    std::string sql = "SELECT * FROM users WHERE id = '" +
+                      std::string(userId ? userId : "") + "'";
+    return db_exec(sql.c_str());                    // SQL sink
 }

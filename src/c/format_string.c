@@ -1,8 +1,13 @@
-/* CWE-134: Uncontrolled format string. */
+/* CWE-134: Uncontrolled format string sourced from the environment. */
 #include <stdio.h>
+#include <stdlib.h>
 #include <syslog.h>
 
-void log_user(const char *user_input) {
-    printf(user_input);          /* attacker controls the format string */
-    syslog(LOG_INFO, user_input);
+int main(void) {
+    const char *user_input = getenv("USER_MSG");
+    if (user_input) {
+        printf(user_input);              /* attacker controls the format string */
+        syslog(LOG_INFO, user_input);
+    }
+    return 0;
 }

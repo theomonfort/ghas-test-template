@@ -1,16 +1,16 @@
-/* CWE-120 / CWE-787: Classic buffer overflow.
- * gets() and strcpy() with no bounds checking on attacker-controlled input. */
+/* CWE-120 / CWE-787: Buffer overflow.
+ * Untrusted input (argv / stdin) copied into a fixed stack buffer with no bounds check. */
 #include <stdio.h>
 #include <string.h>
 
-void greet(const char *name) {
+int main(int argc, char **argv) {
     char buf[16];
-    strcpy(buf, name);          /* overflow if strlen(name) >= 16 */
-    printf("hello %s\n", buf);
-}
-
-void read_line(void) {
+    if (argc > 1) {
+        strcpy(buf, argv[1]);        /* overflow if argv[1] is longer than 15 chars */
+        printf("hello %s\n", buf);
+    }
     char line[32];
-    gets(line);                 /* unbounded read */
+    gets(line);                      /* unbounded read from stdin */
     printf("you typed: %s\n", line);
+    return 0;
 }
