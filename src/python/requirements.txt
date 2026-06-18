@@ -1,0 +1,15 @@
+Flask==0.12.2
+Flask-Cors==3.0.3
+Flask-WTF==0.14.2
+Django==1.11.0
+Jinja2==2.7
+PyYAML==3.12
+requests==2.18.0
+urllib3==1.22
+cryptography==2.2
+paramiko==2.0.0
+pycrypto==2.6.1
+pillow==4.3.0
+lxml==3.6.0
+sqlalchemy==1.0.0
+python-ldap==3.1.0

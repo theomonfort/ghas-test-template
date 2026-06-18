@@ -1,0 +1,32 @@
+{
+  "name": "ghas-theo-js",
+  "version": "1.0.0",
+  "description": "Intentionally vulnerable Node.js code for GHAS demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "4.16.0",
+    "express-session": "1.15.0",
+    "lodash": "4.17.4",
+    "minimist": "1.2.0",
+    "mongoose": "5.0.0",
+    "mysql": "2.14.0",
+    "jsonwebtoken": "0.4.0",
+    "axios": "0.18.0",
+    "marked": "0.3.6",
+    "handlebars": "4.0.0",
+    "node-serialize": "0.0.4",
+    "request": "2.68.0",
+    "ejs": "2.5.5",
+    "xml2js": "0.4.17",
+    "ws": "1.1.0",
+    "debug": "2.6.8",
+    "cors": "2.8.4",
+    "ldapjs": "1.0.2",
+    "xpath": "0.0.27",
+    "xmldom": "0.1.27",
+    "yauzl": "2.10.0"
+  }
+}

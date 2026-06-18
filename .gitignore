@@ -1,0 +1,14 @@
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+target/
+*.class
+*.jar
+.DS_Store
+.idea/
+.vscode/
+*.log
+*.o
+*.obj
