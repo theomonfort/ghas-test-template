@@ -16,6 +16,13 @@ repository"** to get your own copy in seconds.
 > repo, you can turn on the GHAS tools — **CodeQL code scanning, secret scanning + push
 > protection, and Dependabot** — at no cost and start seeing alerts right away.
 
+> 🏢 **To fully leverage GHAS you need a paid GitHub Enterprise plan with GitHub
+> Advanced Security (Code Security + Secret Protection).** On **private** repositories,
+> and for the full feature set — **code quality / code scanning on private repos,
+> generic (non-provider) secret detection, security overview dashboards, and
+> enterprise-wide policies** — a paid Enterprise + GHAS subscription is required. The
+> free tier on **public** repos covers the basics demonstrated here.
+
 ## What you can test
 
 | GHAS tool | What to look for |
