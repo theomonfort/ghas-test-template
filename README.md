@@ -28,6 +28,7 @@ repository"** to get your own copy in seconds.
 | GHAS tool | What to look for |
 | --------- | ---------------- |
 | 🔍 **CodeQL** code scanning (SAST) | Alerts across C, C++, Java, JavaScript, Python on the **Security** tab |
+| 🧹 **Code quality** | Maintainability/reliability findings from `quality_smells.*` (run with the `security-and-quality` suite) |
 | 🤖 **Copilot Autofix** | Suggested fixes on CodeQL alerts |
 | 👁️ **Copilot Code Review** | Open a PR touching a vulnerable file |
 | 🔑 **Secret scanning** + push protection | Fake credentials in [`secrets/`](secrets/) |
