@@ -29,6 +29,7 @@ repository"** to get your own copy in seconds.
 | --------- | ---------------- |
 | 🔍 **CodeQL** code scanning (SAST) | Alerts across C, C++, Java, JavaScript, Python on the **Security** tab |
 | 🧹 **Code quality** | Maintainability/reliability findings from `quality_smells.*` (run with the `security-and-quality` suite) |
+| 📊 **Code coverage** | Native Code Quality coverage — `coverage_demo/` + `tests/` produce a Cobertura report uploaded on PRs (requires Code Quality enabled) |
 | 🤖 **Copilot Autofix** | Suggested fixes on CodeQL alerts |
 | 👁️ **Copilot Code Review** | Open a PR touching a vulnerable file |
 | 🔑 **Secret scanning** + push protection | Fake credentials in [`secrets/`](secrets/) |

@@ -12,3 +12,9 @@ target/
 *.log
 *.o
 *.obj
+
+# Code coverage demo artifacts
+.coverage
+coverage.xml
+.pytest_cache/
+__pycache__/
